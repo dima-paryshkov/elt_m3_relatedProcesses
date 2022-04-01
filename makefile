@@ -21,9 +21,13 @@ all: relatedProcesses.c P1.c P2.c unrelatedProcess_1.c unrelatedProcess_2.c
 	gcc -o unrelatedProcess_2 unrelatedProcess_2.c
 
 # Compile unrelatedProcess_1.c normally
-unrelatedProcess_1:
+unrelatedProcess_1: unrelatedProcess_1.c
 	gcc -o unrelatedProcess_1 unrelatedProcess_1.c
 
 # Compile unrelatedProcess_2.c normally
-unrelatedProcess_2:
+unrelatedProcess_2: unrelatedProcess_2.c
+	gcc -o unrelatedProcess_2 unrelatedProcess_2.c
+
+unrelatedProcess: unrelatedProcess_1.c unrelatedProcess_2.c
+	gcc -o unrelatedProcess_1 unrelatedProcess_1.c
 	gcc -o unrelatedProcess_2 unrelatedProcess_2.c
